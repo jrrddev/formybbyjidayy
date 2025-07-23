@@ -1,0 +1,209 @@
+.journey-title {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-top: 40px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  color: #f9b3c2;
+  overflow-x: hidden;
+}
+
+/* Background Stripes */
+.stripes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff9bb3, #ffffff, #ff9bb3, #ffffff, #ff9bb3,
+    #ffffff, #ff9bb3, #ffffff, #ff9bb3
+  );
+  background-size: 900% 100%;
+  animation: stripesFade 8s ease infinite;
+  z-index: -1;
+}
+
+@keyframes stripesFade {
+  0%, 100% {
+    background-position: 0% 0%;
+    opacity: 1;
+  }
+  25% { opacity: 0.7; }
+  50% {
+    background-position: 100% 0%;
+    opacity: 1;
+  }
+  75% { opacity: 0.7; }
+}
+
+/* Emoji Corners */
+.corner {
+  position: fixed;
+  font-size: 32px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2)) brightness(1.1);
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.corner:hover {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.top-left { top: 15px; left: 15px; }
+.top-right { top: 15px; right: 15px; }
+.bottom-left { bottom: 15px; left: 15px; }
+.bottom-right { bottom: 15px; right: 15px; }
+
+/* Timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 100px 40px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.month-box {
+  background: #ffe4ec;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #ffc0cb;
+  box-shadow:
+    0 10px 30px rgba(255, 182, 193, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 1.5s ease-out;
+}
+
+.month-box h2 {
+  color: #f48ca5;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.month-box img {
+    width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.month-box:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff69b4aa, 0 0 25px #ffb6c1aa;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+}
+
+/* Button to Song Page */
+.bottom-button {
+  text-align: center;
+  margin: 30px 0 60px;
+}
+
+.bottom-button a {
+  display: inline-block;
+  padding: 14px 35px;
+  font-size: 1.3rem;
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+  background: linear-gradient(145deg, #ffa6c9, #ff85b3);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow:
+    0 0 12px rgba(255, 182, 193, 0.6),
+    0 0 25px rgba(255, 182, 193, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-button a::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.bottom-button a:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.bottom-button a:hover {
+  box-shadow:
+    0 0 18px rgba(255, 182, 193, 0.7),
+    0 0 35px rgba(255, 182, 193, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.bottom-button a:active {
+  transform: scale(0.97);
+  box-shadow:
+    0 0 10px rgba(255, 182, 193, 0.5),
+    inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Sparkles */
+#sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0.9;
+  animation: floatSparkle 1.5s linear forwards;
+  color: #fff5fb;
+  filter:
+    drop-shadow(0 0 5px #ffb6c1)
+    drop-shadow(0 0 8px #ffc0cb);
+}
+
+@keyframes floatSparkle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}

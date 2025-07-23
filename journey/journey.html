@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Journey 💖</title>
+  <link rel="stylesheet" href="journey.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Stripes Background -->
+  <div class="stripes"></div>
+
+  <!-- Emoji Corners -->
+  <div class="corner top-left">✨</div>
+  <div class="corner top-right">❤️</div>
+  <div class="corner bottom-left">💖</div>
+  <div class="corner bottom-right">🌟</div>
+
+ <!-- Our Journey Title -->
+  <h1 class="journey-title">Our Journey 💖 </h1>
+
+  <!-- Timeline Container -->
+  <div class="timeline">
+    <div class="month-box">
+      <h2>August 2024</h2>
+      <img src="img/august.jpg" alt="August 2024">
+    </div>
+    <div class="month-box">
+      <h2>January 2025</h2>
+      <img src="img/january.jpg" alt="January 2025">
+    </div>
+    <div class="month-box">
+      <h2>February 2025</h2>
+      <img src="img/february.jpg" alt="February 2025">
+    </div>
+    <div class="month-box">
+      <h2>March 2025</h2>
+      <img src="img/march.jpg" alt="March 2025">
+    </div>
+    <div class="month-box">
+      <h2>April 2025</h2>
+      <img src="img/april.jpg" alt="April 2025">
+    </div>
+    <div class="month-box">
+      <h2>May 2025</h2>
+      <img src="img/may.jpg" alt="May 2025">
+    </div>
+    <div class="month-box">
+      <h2>June 2025</h2>
+      <img src="img/june.jpg" alt="June 2025">
+    </div>
+  </div>
+
+  <!-- Button to Song Page -->
+  <div class="bottom-button">
+    <a href="../song/song.html">Our Song 🎶</a>
+  </div>
+
+  <!-- Sparkle Container -->
+  <div id="sparkle-container"></div>
+
+  <script>
+    // Sparkles
+    const sparkleContainer = document.getElementById('sparkle-container');
+    const sparkleEmoji = ['✨', '💖', '🌸'];
+
+    function createSparkle(x, y) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.innerText = sparkleEmoji[Math.floor(Math.random() * sparkleEmoji.length)];
+      sparkle.style.left = `${x}px`;
+      sparkle.style.top = `${y}px`;
+      sparkle.style.fontSize = `${12 + Math.random() * 10}px`;
+      sparkleContainer.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 1500);
+    }
+
+    document.body.addEventListener('mousemove', (e) => {
+      createSparkle(e.clientX, e.clientY);
+    });
+  </script>
+</body>
+</html>
