@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Love Letter</title>
   <link rel="stylesheet" href="letter.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="background">
     <div class="floating-hearts">
       <!-- Auto-generated hearts with JavaScript -->
+    </div>
+  </div>
+
+  <div id="passwordOverlay" class="password-overlay">
+    <div class="password-container">
+      <h3>💌 Enter Password to Open 💌</h3>
+      <input type="password" id="letterPassword" placeholder="Enter password..." maxlength="6">
+      <button id="submitPassword">Open Letter</button>
+      <p id="passwordError" class="error-message"></p>
     </div>
   </div>
 

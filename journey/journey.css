@@ -80,6 +80,12 @@ body {
   z-index: 0;
 }
 
+@media (max-width: 768px) {
+  .month-box.landscape {
+    grid-column: span 1; /* On mobile, let it take full width */
+  }
+}
+
 .month-box {
   background: #ffe4ec;
   border-radius: 20px;
@@ -91,6 +97,14 @@ body {
     inset 0 0 10px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
   animation: fadeIn 1.5s ease-out;
+}
+
+/* Special styling for landscape images */
+.month-box.landscape {
+  grid-column: span 2;  /* Make it take up 2 columns */
+  max-width: 800px;     /* Limit maximum width */
+  justify-self: center; /* Center it in the grid */
+  margin: 0 auto;       /* Center if smaller than max-width */
 }
 
 .month-box h2 {
