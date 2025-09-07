@@ -72,7 +72,7 @@ body {
 /* Timeline */
 .timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 100px 40px 120px;
   max-width: 1200px;
@@ -81,8 +81,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 20px;
+  }
   .month-box.landscape {
-    grid-column: span 1; /* On mobile, let it take full width */
+    grid-column: span 1;
+  }
+  .timeline {
+    padding: 60px 20px 80px;
   }
 }
 
@@ -97,6 +105,9 @@ body {
     inset 0 0 10px rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(5px);
   animation: fadeIn 1.5s ease-out;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Special styling for landscape images */

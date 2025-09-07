@@ -1,6 +1,51 @@
-// Button Click - Redirect to Next Page
-document.getElementById("clickMeBtn").addEventListener("click", function() {
-    window.location.href = "memories/memories.html";
+// Array of love-themed emojis for the explosion effect
+const loveEmojis = ['❤️', '💖', '💝', '💘', '💕'];
+
+function createLoveEmoji(x, y) {
+    const emoji = document.createElement('div');
+    emoji.className = 'love-emoji';
+    emoji.innerText = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+    
+    // Random position around center
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 20 + Math.random() * 80;
+    const startScale = 0.2 + Math.random() * 0.3;
+    
+    emoji.style.left = `${x}px`;
+    emoji.style.top = `${y}px`;
+    emoji.style.fontSize = '24px';
+    emoji.style.setProperty('--angle', `${angle}rad`);
+    emoji.style.setProperty('--distance', `${distance}px`);
+    emoji.style.setProperty('--start-scale', startScale);
+    
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 700);
+}
+
+function createEmojiExplosion(x, y) {
+    // Create 15-20 emojis for the explosion
+    const numEmojis = 15 + Math.floor(Math.random() * 5);
+    
+    // Create emojis rapidly with slight delay between each
+    for (let i = 0; i < numEmojis; i++) {
+        setTimeout(() => {
+            createLoveEmoji(x, y);
+        }, i * 20); // Slight stagger for more natural look
+    }
+}
+
+// Button Click - Create emoji explosion then redirect
+document.getElementById("clickMeBtn").addEventListener("click", function(e) {
+    const rect = this.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    createEmojiExplosion(centerX, centerY);
+    
+    // Delay redirect to show animation
+    setTimeout(() => {
+        window.location.href = "meandyou/meandyou.html";
+    }, 1000);
 });
 
 const sparkleContainer = document.getElementById('sparkle-container');

@@ -173,6 +173,10 @@ body::before {
 
 /* Button style */
 .button {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px 40px;
   border: none;
   border-radius: 50px;
@@ -186,14 +190,13 @@ body::before {
   font-family: 'Segoe UI', sans-serif;
   text-decoration: none;
   display: inline-block;
-  animation: floatUp 1s ease;
-  margin-top: 70px;
+  z-index: 1000;
 }
 
 .button:hover {
   background: linear-gradient(145deg, #ffb6d9, #ff85c1);
   box-shadow: 0 0 25px rgba(255, 105, 180, 0.8), 0 0 60px rgba(255, 105, 180, 0.5);
-  transform: scale(1.05);
+  transform: translateX(-50%) translateY(-5px);
 }
 
 @keyframes floatUp {
@@ -235,8 +238,9 @@ canvas#sparkleCanvas {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
-  /* Responsive Gallery Layout */
+/* Responsive Gallery Layout */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -246,6 +250,11 @@ canvas#sparkleCanvas {
 
 /* Mobile-First Media Queries */
 @media screen and (max-width: 768px) {
+  .button {
+    padding: 12px 30px;
+    font-size: 18px;
+    bottom: 20px;
+  }
   .gallery {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 0.5rem;

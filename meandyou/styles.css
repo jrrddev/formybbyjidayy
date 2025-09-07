@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffe6e6, #ffb3d9);
+    font-family: 'Cookie', cursive;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    font-family: 'Cookie', cursive;
+    color: #ff4d94;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-counter {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.time-block span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff1a75;
+    font-family: Arial, sans-serif;
+}
+
+.time-block .label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-family: Arial, sans-serif;
+}
+
+.message {
+    font-family: 'Cookie', cursive;
+    font-size: 2.2rem;
+    color: #ff66b3;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.memories-btn {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #ff85b3, #ff5c99);
+    background: linear-gradient(145deg, #ff85b3, #ff5c99);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-family: 'Cookie', cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(255, 133, 179, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.memories-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #ff85b3, #ff5c99);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 133, 179, 0.4);
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    will-change: transform;
+}
+
+.memories-btn:hover {
+    transform: translate(-50%, -3px);
+    box-shadow: 
+        0 8px 20px rgba(255, 133, 179, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.memories-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.memories-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 60%
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.memories-btn:hover::after {
+    opacity: 1;
+    left: 100%;
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: fixed;
+    font-size: 1.5rem;
+    animation: float 5s linear infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
