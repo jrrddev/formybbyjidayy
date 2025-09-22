@@ -82,15 +82,75 @@ body {
 
 @media (max-width: 768px) {
   .timeline {
-    grid-template-columns: 1fr;
-    max-width: 500px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
     gap: 20px;
+    padding: 60px 20px 80px;
+    width: 100%;
+  }
+  .month-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    grid-column: 1 !important;
   }
   .month-box.landscape {
-    grid-column: span 1;
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
+}
+
+/* Additional mobile breakpoints for smaller devices */
+@media (max-width: 480px) {
   .timeline {
-    padding: 60px 20px 80px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 15px;
+    padding: 50px 15px 70px;
+    width: 100%;
+  }
+  .month-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    grid-column: 1 !important;
+    padding: 15px;
+  }
+  .month-box.landscape {
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .journey-title {
+    font-size: 2.5rem;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .timeline {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 12px;
+    padding: 40px 12px 60px;
+    width: 100%;
+  }
+  .month-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    grid-column: 1 !important;
+    padding: 12px;
+  }
+  .month-box.landscape {
+    grid-column: 1 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .journey-title {
+    font-size: 2.2rem;
+    margin-top: 25px;
   }
 }
 

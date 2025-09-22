@@ -1,5 +1,5 @@
 const envelope = document.querySelector(".envelope-wrapper");
-const heart = document.querySelector(".heart");
+const envelopeElement = document.querySelector(".envelope");
 const passwordOverlay = document.getElementById("passwordOverlay");
 const passwordInput = document.getElementById("letterPassword");
 const submitButton = document.getElementById("submitPassword");
@@ -35,7 +35,7 @@ function checkPassword() {
     }
 }
 
-heart.addEventListener("click", () => {
+envelopeElement.addEventListener("click", () => {
     envelope.classList.toggle("flap");
 });
 

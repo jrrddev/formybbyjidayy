@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Love Letter</title>
   <link rel="stylesheet" href="letter.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="background">
     <div class="floating-hearts">
       <!-- Auto-generated hearts with JavaScript -->
     </div>
+    <div class="floating-roses">
+      <div class="rose rose1">🌹</div>
+      <div class="rose rose2">🌹</div>
+      <div class="rose rose3">🌹</div>
+      <div class="rose rose4">🌹</div>
+    </div>
+    <div class="floating-sparkles">
+      <div class="sparkle sparkle1">✨</div>
+      <div class="sparkle sparkle2">💫</div>
+      <div class="sparkle sparkle3">⭐</div>
+      <div class="sparkle sparkle4">✨</div>
+      <div class="sparkle sparkle5">💫</div>
+      <div class="sparkle sparkle6">⭐</div>
+    </div>
   </div>
 
   <div id="passwordOverlay" class="password-overlay">
     <div class="password-container">
-      <h3>💌 Enter Password to Open 💌</h3>
+      <h3>💌 Enter Password to Open </h3>
       <input type="password" id="letterPassword" placeholder="Enter password..." maxlength="6">
       <button id="submitPassword">Open Letter</button>
       <p id="passwordError" class="error-message"></p>
@@ -26,14 +40,38 @@
   <div class="container">
     <div class="envelope-wrapper">
       <div class="envelope">
-        <div class="letter">
-          <div class="text">
-            <strong>Dear Love,</strong>
-            <p>You mean the world to me... 💗</p>
+        <!-- Envelope Base -->
+        <div class="envelope-base">
+          <!-- Letter Paper Inside -->
+          <div class="letter-inside">
+            <div class="letter-edge"></div>
           </div>
         </div>
+        
+        <!-- Envelope Back Wall -->
+        <div class="envelope-back"></div>
+        
+        <!-- Envelope Flap -->
+        <div class="envelope-flap">
+          <div class="wax-seal">
+            <div class="seal-heart">💕</div>
+          </div>
+        </div>
+        
+        <!-- Address Label -->
+        <div class="address-label">
+          <div class="to-from">
+            <div class="to">To: My bby Jidayy</div>
+            <div class="from">From: Your Love, Jared</div>
+          </div>
+        </div>
+        
+        <!-- Decorative Stamp -->
+        <div class="stamp">
+          <div class="stamp-content">💌</div>
+        </div>
       </div>
-      <div class="heart"></div>
+      
       <div class="popup-letter">
         <div class="surprise-button">
           <a href="../flower/flower.html" class="surprise-link">
@@ -41,11 +79,10 @@
           </a>
         </div>
         <div class="popup-content">
-          <h2>Dear Jidayy 💌</h2>
-          <p>bby jidayy ilovveeeeyouu mwaaa, sorry pirme taka na away pero lablab taka always asta sano, asta ma patay ko haha kag tni updanay ta asta ma patay kag tani dkana ma ngakig pirme sakon, jidayy thankyou sa tanan kag thankyou sa mga bulig mo, libre mo, kiss mo, hug mo, damo damo pa, di man ko perfect pero promise I will love you always kag try ko best ko para smo kahit ano ma tabo, sa imo lang ako iloveyouusoomuchhmwaaa😊❤️</p>
+          <h2>Dear Jidayy</h2>
+          <p>bby jidayy ilovveeeeyouu mwaaa, bby thankyou sa tanan tanan mo na bulig kag obra para sakon kahit pasaway ko love tagd ka sobra remember kopa mga memories ta sng una may sadya may subo hahaha... bby sorry pirme taka na away pero lablab taka always asta sano, asta ma patay ko haha kag tni updanay ta asta ma patay kag tani dkana ma ngakig pirme sakon, jidayy thankyou gd sa tanan kag thankyou sa mga bulig mo, libre mo, kiss mo, hug mo, damo damo pa, di man ko perfect pero promise I will love you always kag try ko best ko para smo kahit ano ma tabo, sa imo lang ako iloveyouusoomuchhmwaaa.</p>
         </div>
         <div class="signature">Your Love, Jared💕😊</div>
-      </div>
       </div>
     </div>
   </div>
