@@ -1,3 +1,34 @@
+// Password protection
+const PASSWORD = "100124";
+const passwordOverlay = document.getElementById("password-overlay");
+const mainContent = document.getElementById("main-content");
+const passwordInput = document.getElementById("password-input");
+const passwordSubmit = document.getElementById("password-submit");
+const passwordError = document.getElementById("password-error");
+
+function checkPassword() {
+    if (passwordInput.value === PASSWORD) {
+        passwordOverlay.style.display = "none";
+        mainContent.style.display = "block";
+        passwordError.style.display = "none";
+    } else {
+        passwordError.style.display = "block";
+        passwordInput.value = "";
+        passwordInput.focus();
+    }
+}
+
+passwordSubmit.addEventListener("click", checkPassword);
+
+passwordInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        checkPassword();
+    }
+});
+
+// Focus on password input when page loads
+passwordInput.focus();
+
 // Array of love-themed emojis for the explosion effect
 const loveEmojis = ['❤️', '💖', '💝', '💘', '💕'];
 

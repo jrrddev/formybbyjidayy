@@ -11,11 +11,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-    <!-- Animated Stripes Background -->
-    <div class="stripes"></div>
+    <!-- Password Overlay -->
+    <div id="password-overlay">
+        <div class="password-box">
+            <h2>🔒 Enter Password</h2>
+            <input type="password" id="password-input" placeholder="Enter password..." />
+            <button id="password-submit">Submit 💖</button>
+            <p id="password-error" style="color: #ff6b6b; display: none; margin-top: 10px;">Incorrect password. Try again! 💕</p>
+        </div>
+    </div>
 
-    <!-- Greeting Box (Now Larger) -->
-    <div class="greeting-box">
+    <!-- Main Content (Hidden until password correct) -->
+    <div id="main-content" style="display: none;">
+        <!-- Animated Stripes Background -->
+        <div class="stripes"></div>
+
+        <!-- Greeting Box (Now Larger) -->
+        <div class="greeting-box">
         <!-- Real Emoji Decorations -->
         <div class="corner top-left">✨</div>  <!-- Sparkle emoji -->
         <div class="corner top-right">❤️</div> <!-- Red heart emoji -->
@@ -29,6 +41,9 @@
     </div>
 
     <div id="sparkle-container"></div>
+    </div>
+    <!-- End Main Content -->
+
     <script src="script.js"></script>
 
 </body>
